@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell a joke!!</title>
+</head>
+<style>
+
+body{
+    background-color: rgb(207, 178, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    margin: 0;   
+}
+.joke{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(137, 43, 226, 0.76);
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 50px;
+}
+p{
+    font-size: 25px;
+    padding: 10px 0;
+}
+h1{
+    color: white;
+}
+button{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid purple;
+    font-size: 15px;
+    width: 100px;
+    cursor: pointer;
+}
+</style>
+<body>
+    
+    <div class="joke">
+        <h1>Tell me a Joke!!</h1>
+        <p id="output"></p>
+        <button id="button">Click Me</button>
+    </div>
+
+    <script>
+        let joke = [
+        {
+            "joker": "I hate double standards. Burn a body at a crematorium, you're \"being a respectful friend.\" Do it at home and you're \"destroying evidence.\"",
+        },
+        {
+            "joker": "If you're here for the yodeling lesson, please form an orderly orderly orderly queue.",
+        },
+        {
+            "joker": "A guy walks into a bar and asks for 1.4 root beers.\nThe bartender says \"I'll have to charge you extra, that's a root beer float\".\nThe guy says \"In that case, better make it a double.\"",
+        },
+        {
+            "joker": "\"We messed up the keming again guys.\"",   
+        },
+        {
+            "joker": "Java is like Alzheimer's, it starts off slow, but eventually, your memory is gone.",
+        },
+        {
+            "joker": "I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!",
+        },
+        {
+            "joker": "Dark humor is like food, not everyone gets it.",
+        },
+        {
+            "joker": "Today, my son asked \"Can I have a book mark?\" and I burst into tears.\n11 years old and he still doesn't know my name is Brian.",
+        },
+        {
+            "joker": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",          
+        }
+    ]  
+        
+        let buttonJoke = document.getElementById('button')      
+        let output = document.getElementById('output');
+        
+        buttonJoke.addEventListener('click', () => {
+        let randomJoke = Math.floor(Math.random() * (joke.length - 1))
+        output.innerHTML = joke[randomJoke].joker
+        console.log(joke[randomJoke].joker)
+        })
+
+    </script>
+</body>
+</html>
